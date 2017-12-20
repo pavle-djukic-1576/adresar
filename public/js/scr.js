@@ -85,7 +85,7 @@
                         + "<th>" + "<div class='divEdit' id='" + data[i].id + "'>" + data[i].postanskiBroj + "</div>" + "<input class='nClas" + data[i].id + "' id='hBroj" + data[i].id + "' type='hidden'>" + "</div>" + "</th>"
                         + "<th>" + "<div class='divEdit' id='" + data[i].id + "'>" + data[i].grad + "</div>" + "<input class='iClas" + data[i].id + "' id='hGrad" + data[i].id + "' type='hidden'>" + "</div>" + "</th>"
                         + "<th>" + "<div class='divEdit' id='" + data[i].id + "'>" + data[i].zemlja + "</div>" + "<input class='iClas" + data[i].id + "' id='hZemlja" + data[i].id + "' type='hidden'>" + "</div>" + "</th>"
-                        + "<th>" + "<div id='cb'> <div class='divEdit' id='" + data[i].id + "'>" + data[i].punoletan + "</div> </div>" + "<input class='cClas" + data[i].id + "' id='hPunoletan" + data[i].id + "' type='hidden'>" + "</div>" + "</th>"
+                        + "<th>" + "<div id='cb"+ data[i].id  +"'> <div class='divEdit' id='" + data[i].id + "'>" + data[i].punoletan + "</div> </div>" + "<input class='cClas" + data[i].id + "' id='hPunoletan" + data[i].id + "' type='hidden'>" + "</div>" + "</th>"
                         //Okidaci za brisanje / cuvanje izmene / cancel
                         + "<th>" +
                         "<button class='delBtn' id='delBtn" + data[i].id + "'> Obriši podatak</button> "
@@ -156,7 +156,8 @@
             $('#hIme').val("");
 
             //uzima tekstualnu vrednost checkbox-a iz tabele / if - postavlja stikliran ili ne checkbox
-            $cb = $("#cb").find('div').html();
+            $cb = $("#cb"+$clickedDiv).find('div').html(); //****
+
 
             if($cb == "true"){
                 $("#hPunoletan" + $clickedDiv)[0].checked = true;
